@@ -104,21 +104,21 @@ def main():
             with tab_register:
                 register_form()
         else:
-            st.rerun()
+            st.experimental_rerun()
 
     elif page == "HR Login":
         if not st.session_state.logged_in:
             st.title("HR Login")
             login_form(role="HR")
         else:
-            st.rerun()
+            st.experimental_rerun()
 
     elif page == "Accountant Login":
         if not st.session_state.logged_in:
             st.title("Accountant Login")
             login_form(role="Accountant")
         else:
-            st.rerun()
+            st.experimental_rerun()
 
     elif page == "HR Page":
         if st.session_state.logged_in and st.session_state.role == "HR":
@@ -153,7 +153,7 @@ def login_form(role=None):
             st.session_state.username = username
             st.session_state.role = user_role
             st.success("Login successful!")
-            st.rerun()
+            st.experimental_rerun()
         else:
             st.error("Invalid username or password")
 
