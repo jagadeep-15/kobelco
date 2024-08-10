@@ -86,7 +86,7 @@ def main():
             page = st.sidebar.radio("Select Page", ["Accountant"])
 
     # Sidebar branding (optional)
-    logo_path = r"SBA LOGO.jpg"
+    logo_path = r"C:\Users\SBAL036\Pictures\SBA LOGO.jpg"
     if os.path.exists(logo_path):
         st.sidebar.image(logo_path, width=200)  # Adjust width as needed
     else:
@@ -104,21 +104,21 @@ def main():
             with tab_register:
                 register_form()
         else:
-            st.experimental_rerun()
+            st.rerun()
 
     elif page == "HR Login":
         if not st.session_state.logged_in:
             st.title("HR Login")
             login_form(role="HR")
         else:
-            st.experimental_rerun()
+            st.rerun()
 
     elif page == "Accountant Login":
         if not st.session_state.logged_in:
             st.title("Accountant Login")
             login_form(role="Accountant")
         else:
-            st.experimental_rerun()
+            st.rerun()
 
     elif page == "HR Page":
         if st.session_state.logged_in and st.session_state.role == "HR":
@@ -153,7 +153,7 @@ def login_form(role=None):
             st.session_state.username = username
             st.session_state.role = user_role
             st.success("Login successful!")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Invalid username or password")
 
