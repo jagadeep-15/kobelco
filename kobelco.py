@@ -86,7 +86,7 @@ def main():
             page = st.sidebar.radio("Select Page", ["Accountant"])
 
     # Sidebar branding (optional)
-    logo_path = "path/to/your/logo.jpg"  # Adjust the path as needed
+    logo_path = "SBA LOGO.jpg"  # Adjust the path as needed
     if os.path.exists(logo_path):
         st.sidebar.image(logo_path, width=200)  # Adjust width as needed
     else:
